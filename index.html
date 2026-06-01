@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Museu Digital</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="hero" id="inicio">
+    <nav class="navbar">
+      <a href="#inicio" class="logo">Museu Digital</a>
+
+      <ul class="menu">
+        <li><a href="#colecao">Coleção</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero-conteudo">
+      <p class="subtitulo">Arte moderna</p>
+      <h1>Catálogo museu digital</h1>
+      <p>Este site mostra algumas obras de arte com imagem, artista, ano e outras informações.</p>
+
+      <div class="hero-acoes">
+        <a href="#colecao" class="botao principal">Ver coleção</a>
+        <a href="#sobre" class="botao secundario">Sobre</a>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section class="indicadores">
+      <article>
+        <span id="totalObras">0</span>
+        <p>Obras</p>
+      </article>
+
+      <article>
+        <span id="totalTipos">0</span>
+        <p>Tipos</p>
+      </article>
+
+      <article>
+        <span>MoMA</span>
+        <p>Fonte das obras</p>
+      </article>
+    </section>
+
+    <section id="colecao" class="secao">
+      <div class="cabecalho-secao">
+        <p class="subtitulo verde">Catálogo</p>
+        <h2>Coleção</h2>
+        <p>Use a pesquisa e os filtros para procurar uma obra.</p>
+      </div>
+
+      <div class="controlos">
+        <div class="campo maior">
+          <label for="pesquisa">Pesquisar</label>
+          <input type="text" id="pesquisa" placeholder="Título ou artista">
+        </div>
+
+        <div class="campo">
+          <label for="filtroTipo">Tipo de obra</label>
+          <select id="filtroTipo">
+            <option value="todos">Todos</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="ordenacao">Ordenar</label>
+          <select id="ordenacao">
+            <option value="padrao">Normal</option>
+            <option value="ano-asc">Ano crescente</option>
+            <option value="ano-desc">Ano decrescente</option>
+            <option value="titulo-asc">Título A-Z</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="resultadoTexto" class="resultado-texto"></p>
+      <div id="listaObras" class="catalogo"></div>
+    </section>
+
+    <section id="sobre" class="secao sobre">
+      <div class="cabecalho-secao">
+        <p class="subtitulo verde">Sobre</p>
+        <h2>Sobre o projeto</h2>
+        <p>Este projeto foi feito para praticar HTML, CSS, JavaScript e um pouco de Flask.</p>
+      </div>
+
+      <div class="sobre-grid">
+        <article>
+          <h3>Pesquisa</h3>
+          <p>Dá para pesquisar pelo título ou pelo artista.</p>
+        </article>
+
+        <article>
+          <h3>Filtro</h3>
+          <p>Dá para escolher o tipo de obra.</p>
+        </article>
+
+        <article>
+          <h3>Dados</h3>
+          <p>As obras são carregadas a partir de um ficheiro JSON.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" class="secao contacto">
+      <div class="cabecalho-secao">
+        <p class="subtitulo verde">Contacto</p>
+        <h2>Entrar em contacto</h2>
+        <p>Preencha o formulário para entrar em contacto connosco.</p>
+      </div>
+
+      <form class="formulario" id="formContacto" action="/contacto/" method="POST">
+        <div>
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="O seu nome" required>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="email@exemplo.com" required>
+        </div>
+
+        <div>
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva a sua mensagem" required></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="modal" id="modalContacto">
+    <div class="modal-caixa">
+      <button class="modal-fechar" id="fecharModal" type="button">x</button>
+      <h2 id="modalTitulo">Mensagem enviada</h2>
+      <p id="modalMensagem">Obrigado pelo seu contacto.</p>
+    </div>
+  </div>
+
+  <footer>
+    <p>Museu Digital - Afrânio Meirelles</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
